@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- Menu utama -->
+  <menuitem id="nav_school_root" name="Sekolah" sequence="10"/>
+
+  <!-- Master Data -->
+  <menuitem id="nav_master_data_root" name="Master Data" parent="nav_school_root"/>
+  <!-- Dropdown -->
+  <menuitem id="nav_master_data_siswa" name="Siswa" parent="nav_master_data_root" action="master_data_siswa"/>
+  <!-- <menuitem id="nav_master_data_guru" name="Guru" parent="nav_master_data_root"/>
+  <menuitem id="nav_master_data_orang_tua" name="Orang Tua" parent="nav_master_data_root"/> -->
+
+  <!-- Konfigurasi -->
+  <menuitem id="nav_konfigurasi_root" name="Konfigurasi" parent="nav_school_root"/>
+
+
+  <!-- Sekolah -->
+  <menuitem id="nav_konfigurasi_sekolah_category" name="Sekolah" parent="nav_konfigurasi_root"/>
+  <!-- Laporan Bulanan -->
+  <menuitem id="nav_konfigurasi_sekolah_laporanbulanan" name="Laporan Bulanan" parent="nav_konfigurasi_sekolah_category"/>
+
+  <!-- Pembayaran -->
+  <menuitem id="nav_konfigurasi_pembayaran_category" name="Pembayaran" parent="nav_konfigurasi_root"/>
+  <!-- Tahun Ajaran -->
+  <menuitem id="nav_konfigurasi_pembayaran_komponenusaha" name="Komponen Usaha" parent="nav_konfigurasi_pembayaran_category" action="konfigurasi_pembayaran_komponenusaha"/>
+  <menuitem id="nav_konfigurasi_pembayaran_diskonkhusus" name="Diskon Khusus" parent="nav_konfigurasi_pembayaran_category" action="konfigurasi_pembayaran_diskonkhusus"/>
+  <menuitem id="nav_konfigurasi_pembayaran_periods" name="Periods" parent="nav_konfigurasi_pembayaran_category" action="konfigurasi_pembayaran_periods"/>
+  <menuitem id="nav_konfigurasi_pembayaran_tahunajaran" name="Tahun Ajaran" parent="nav_konfigurasi_pembayaran_category" action="konfigurasi_pembayaran_tahunajaran"/>
+
+
+</odoo>

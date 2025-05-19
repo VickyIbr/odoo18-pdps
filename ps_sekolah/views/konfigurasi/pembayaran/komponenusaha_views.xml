@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="konfigurasi_pembayaran_komponenusaha" model="ir.actions.act_window">
+        <field name="name">Komponen Usaha</field>
+        <field name="res_model">konfigurasi.pembayaran.komponenusaha</field>
+        <field name="view_mode">list,search,form</field>
+    </record>
+
+    <record id="konfigurasi_pembayaran_komponenusaha_form" model="ir.ui.view">
+        <field name="name">konfigurasi_pembayaran_komponenusaha.form</field>
+        <field name="model">konfigurasi.pembayaran.komponenusaha</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="payment" required="1"/>
+                            <field name="jemputan" required="1"/>
+                        </group>
+                        <group>
+                            <field name="tujuan" required="1"/>
+                            <field name="catering" required="1"/>
+                            <field name="active" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="konfigurasi_pembayaran_komponenusaha_search" model="ir.ui.view">
+        <field name="name">konfigurasi_pembayaran_komponenusaha.search</field>
+        <field name="model">konfigurasi.pembayaran.komponenusaha</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="payment"/>
+                <field name="jemputan"/>
+                <field name="tujuan"/>
+                <field name="catering"/>
+                <field name="active"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="konfigurasi_pembayaran_komponenusaha_list" model="ir.ui.view">
+        <field name="name">konfigurasi_pembayaran_komponenusaha.list</field>
+        <field name="model">konfigurasi.pembayaran.komponenusaha</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="payment"/>
+                <field name="jemputan"/>
+                <field name="tujuan"/>
+                <field name="catering"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+</odoo>
+

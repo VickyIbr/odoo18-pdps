@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="konfigurasi_pembayaran_diskonkhusus" model="ir.actions.act_window">
+        <field name="name">Diskon Khusus</field>
+        <field name="res_model">konfigurasi.pembayaran.diskonkhusus</field>
+        <field name="view_mode">list,search,form</field>
+    </record>
+
+    <record id="konfigurasi_pembayaran_diskonkhusus_form" model="ir.ui.view">
+        <field name="name">konfigurasi_pembayaran_diskonkhusus.form</field>
+        <field name="model">konfigurasi.pembayaran.diskonkhusus</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="siswa" required="1"/>
+                        </group>
+
+                        <group>
+                            <field name="komponen" required="1"/>
+                        </group>
+                    </group>
+
+                    <group col="2">
+                        <field name="keterangan" required="1" colspan="2"/>
+                    </group>
+                    <group col="2">
+                        <group>
+                            <field name="diskon_percent" required="1"/>
+                        </group>
+
+                        <group>
+                            <field name="diskon_amount" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="konfigurasi_pembayaran_diskonkhusus_search" model="ir.ui.view">
+        <field name="name">konfigurasi_pembayaran_diskonkhusus.search</field>
+        <field name="model">konfigurasi.pembayaran.diskonkhusus</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="siswa" required="1"/>
+                <field name="komponen" required="1"/>
+                <field name="keterangan" required="1"/>
+                <field name="diskon_amount" required="1"/>
+                <field name="diskon_percent" required="1"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="konfigurasi_pembayaran_diskonkhusus_list" model="ir.ui.view">
+        <field name="name">konfigurasi_pembayaran_diskonkhusus.list</field>
+        <field name="model">konfigurasi.pembayaran.diskonkhusus</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="siswa" required="1"/>
+                <field name="komponen" required="1"/>
+                <field name="keterangan" required="1"/>
+                <field name="diskon_amount" required="1"/>
+                <field name="diskon_percent" required="1"/>
+            </list>
+        </field>
+    </record>
+
+</odoo>
+

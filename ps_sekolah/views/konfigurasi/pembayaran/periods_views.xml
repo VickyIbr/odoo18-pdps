@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="konfigurasi_pembayaran_periods" model="ir.actions.act_window">
+        <field name="name">Periods</field>
+        <field name="res_model">konfigurasi.pembayaran.periods</field>
+        <field name="view_mode">list,search,form</field>
+    </record>
+
+    <record id="konfigurasi_pembayaran_periods_form" model="ir.ui.view">
+        <field name="name">konfigurasi_pembayaran_periods.form</field>
+        <field name="model">konfigurasi.pembayaran.periods</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" required="1"/>
+                        <field name="code" required="1"/>
+                        <field name="fiscal_year" required="1" options="{'no_create_edit': True}" context="{'create': False, 'create_edit': False}" />
+                        <field name="openingclosingperiod" required="1"/>
+                        <field name="enddate" required="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="konfigurasi_pembayaran_periods_search" model="ir.ui.view">
+        <field name="name">konfigurasi_pembayaran_periods.search</field>
+        <field name="model">konfigurasi.pembayaran.periods</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="fiscal_year"/>
+                <field name="openingclosingperiod"/>
+                <field name="enddate"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="konfigurasi_pembayaran_periods_list" model="ir.ui.view">
+        <field name="name">konfigurasi_pembayaran_periods.tree</field>
+        <field name="model">konfigurasi.pembayaran.periods</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="fiscal_year"/>
+                <field name="openingclosingperiod"/>
+                <field name="enddate"/>
+            </list>
+        </field>
+    </record>
+
+</odoo>
+

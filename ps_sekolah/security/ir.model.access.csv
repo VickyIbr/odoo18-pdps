@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id,perm_read,perm_write,perm_create,perm_unlink
+access_sekolah_siswa,masterdata.siswa,model_masterdata_siswa,,1,1,1,1
+access_konfigurasi_sekolah_laporanbulanan,konfigurasi.pembayaran.laporanbulanan,model_konfigurasi_sekolah_laporanbulanan,,1,1,1,1
+access_konfigurasi_pembayaran_tahunajaran,konfigurasi.pembayaran.tahunajaran,model_konfigurasi_pembayaran_tahunajaran,,1,1,1,1
+access_konfigurasi_pembayaran_periods,konfigurasi.pembayaran.periods,model_konfigurasi_pembayaran_periods,,1,1,1,1
+access_konfigurasi_pembayaran_komponenusaha,konfigurasi.pembayaran.komponenusaha,model_konfigurasi_pembayaran_komponenusaha,,1,1,1,1
+access_konfigurasi_pembayaran_diskonkhusus,konfigurasi.pembayaran.diskonkhusus,model_konfigurasi_pembayaran_diskonkhusus,,1,1,1,1
+

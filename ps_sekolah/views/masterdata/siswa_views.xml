@@ -14,13 +14,155 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <label for="name" class="oe_edit_only"/>
+                    <field name="name" required="0"/>
                     <group>
-                        <field name="name" required="1"/>
-                        <field name="age" required="1"/>
-                        <field name="gender"/>
-                        <field name="address"/>
-                        <field name="classname"/>
+                        <group>
+                            <label for="street" string="Address"/>
+                            <div>
+                                <div class="o_address_format" name="div_address">
+                                    <field name="street" placeholder="Street..." class="o_address_street"/>
+                                    <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                    <field name="city" placeholder="City" class="o_address_city"/>
+                                    <field name="state_id" class="o_address_state" placeholder="State" options="{'no_open': True, 'no_quick_create': True}" context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}"/>
+                                    <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                    <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
+                                    <field name="vat" placeholder="e.g BE0477472101" />
+                                </div>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="phone" widget="phone" options="{'enable_sms': false}"/>
+                            <field name="mobile" widget="phone" options="{'enable_sms': false}"/>
+                            <field name="email"/>
+                            <field name="website"/>
+                            <field name="lang"/>
+                        </group>
                     </group>
+                    <notebook>
+                        <page string="Siswa">
+                            <!-- Informasi Section -->
+                            <separator string="Informasi" colspan="2"/>
+                            <group colspan="2">
+                                <group col="4">
+                                    <field name="pendaftaran"/>
+                                    <field name="jenjang"/>
+                                    <field name="tahun_ajaran"/>
+                                    <field name="nisq"/>
+                                    <field name="orang_tua"/>
+                                </group>
+                                <group col="4">
+                                    <field name="virtual_account"/>
+                                    <field name="lembaga"/>
+                                    <field name="ruang_kelas"/>
+                                    <field name="nisn"/>
+                                    <field name="user_login"/>
+                                    <field name="siswa" widget="boolean_toggle"/>
+                                </group>
+                            </group>
+
+                            <!-- Kelahiran Section -->
+                            <separator string="Kelahiran" colspan="2"/>
+                            <group colspan="2">
+                                <group col="4">
+                                    <field name="tanggal_lahir"/>
+                                    <field name="agama"/>
+                                </group>
+                                <group col="4">
+                                    <field name="tempat_lahir"/>
+                                    <field name="kebangsaan"/>
+                                </group>
+                            </group>
+
+                            <!-- Saudara Section -->
+                            <separator string="Saudara" colspan="2"/>
+                            <group colspan="2">
+                                <group col="4">
+                                    <field name="anak_ke"/>
+                                    <field name="tiri"/>
+                                </group>
+                                <group col="4">
+                                    <field name="kandung"/>
+                                    <field name="angkat"/>
+                                </group>
+                            </group>
+
+                            <!-- Lainnya Section -->
+                            <separator string="Lainnya" colspan="2"/>
+                            <group colspan="2">
+                                <group col="4">
+                                    <field name="nama_panggilan"/>
+                                    <field name="bahasa_di_rumah"/>
+                                    <field name="transportasi"/>
+                                    <field name="jarak_sekolah"/>
+                                    <field name="bertempat_tinggal_pada"/>
+                                </group>
+                                <group col="4">
+                                    <field name="jenis_kelamin"/>
+                                    <field name="gol_darah"/>
+                                    <field name="berat_badan"/>
+                                    <field name="tinggi_badan"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <page string="Harga Khusus">
+                            <group>
+                                <field name="bebas_biaya"/>
+                                <field name="komponen_ids"/>
+                            </group>
+
+                        </page>
+                        <page string="Orang Tua">
+                            <!-- Ayah -->
+                            <group>
+                                <separator string="Ayah" colspan="2"/>
+                                <group colspan="2">
+                                    <group>
+                                        <field name="father_name"/>
+                                        <field name="father_phone"/>
+                                        <field name="father_religion"/>
+                                        <field name="father_income"/>
+                                    </group>
+                                    <group>
+                                        <field name="father_education"/>
+                                        <field name="father_work"/>
+                                        <field name="father_nationality"/>
+                                    </group>
+                                </group>
+                            </group>
+                            <!-- Ibu -->
+                            <group>
+                                <separator string="Ibu" colspan="2"/>
+                                <group colspan="2">
+                                    <group>
+                                        <field name="mother_name"/>
+                                        <field name="mother_phone"/>
+                                        <field name="mother_religion"/>
+                                        <field name="mother_income"/>
+                                    </group>
+                                    <group>
+                                        <field name="mother_education"/>
+                                        <field name="mother_work"/>
+                                        <field name="mother_nationality"/>
+                                    </group>
+                                </group>
+                            </group>
+                            <!-- Wali -->
+                            <group>
+                                <separator string="Wali" colspan="2"/>
+                                <group>
+                                    <field name="wali_name"/>
+                                    <field name="wali_phone"/>
+                                    <field name="wali_religion"/>
+                                    <field name="wali_income"/>
+                                    <field name="wali_education"/>
+                                    <field name="wali_work"/>
+                                    <field name="wali_nationality"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -33,10 +175,6 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name"/>
-                <field name="age"/>
-                <field name="gender"/>
-                <field name="address"/>
-                <field name="classname"/>
             </search>
         </field>
     </record>
@@ -48,10 +186,6 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
-                <field name="age"/>
-                <field name="gender"/>
-                <field name="address"/>
-                <field name="classname"/>
             </list>
         </field>
     </record>
@@ -68,12 +202,6 @@
                             <strong>
                                 <field name="name"/>
                             </strong>
-                            <div>Age: <field name="age"/>
-                            </div>
-                            <div>Gender: <field name="gender"/>
-                            </div>
-                            <div>Class: <field name="classname"/>
-                            </div>
                         </div>
                     </t>
                 </templates>

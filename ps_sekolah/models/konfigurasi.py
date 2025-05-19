@@ -8,7 +8,6 @@ class KonfigurasiPembayaranTahunAjaran(models.Model):
     _name = "konfigurasi.pembayaran.tahunajaran"
     _description = "Tahun Ajaran"
 
-    id = fields.One2many('konfigurasi.pembayaran.periods','fiscal_year',string='ID')
     fiscal_year = fields.Char(string='Fiscal Year')
     code = fields.Char(string='Code')
     startdate = fields.Date(string='Start Date')
@@ -28,7 +27,7 @@ class KonfigurasiPembayaranPeriods(models.Model):
 
     name = fields.Char(string='Period Name')
     code = fields.Char(string='Code')
-    fiscal_year = fields.Many2one('konfigurasi.pembayaran.tahunajaran', string='Fiscal Year')
+    fiscal_year_id = fields.Many2one('konfigurasi.pembayaran.tahunajaran', string='Fiscal Year')
     openingclosingperiod = fields.Boolean(string='Opening/Closing Period', default=False)
     startdate = fields.Date(string='Start Date')
     enddate = fields.Date(string='End Date')
@@ -54,8 +53,8 @@ class KonfigurasiPembayaranDiskonKhusus(models.Model):
     _name = "konfigurasi.pembayaran.diskonkhusus"
     _description = "Diskon Khusus"
 
-    siswa = fields.Many2one('masterdata.siswa', string='Siswa')
-    komponen = fields.Many2one('konfigurasi.pembayaran.komponenusaha', string='Komponen')
+    siswa_id = fields.Many2one('masterdata.siswa', string='Siswa')
+    komponen_id = fields.Many2one('konfigurasi.pembayaran.komponenusaha', string='Komponen')
     keterangan = fields.Text(string='Keterangan')
     diskon_amount = fields.Integer(string='Disc Amount')
     diskon_percent = fields.Integer(string='Disc Percent')

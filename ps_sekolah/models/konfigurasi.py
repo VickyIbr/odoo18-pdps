@@ -7,6 +7,7 @@ class KonfigurasiSekolahLaporanBulanan(models.Model):
 class KonfigurasiPembayaranTahunAjaran(models.Model):
     _name = "konfigurasi.pembayaran.tahunajaran"
     _description = "Tahun Ajaran"
+    _rec_name = 'fiscal_year'
 
     fiscal_year = fields.Char(string='Fiscal Year')
     code = fields.Char(string='Code')
@@ -17,9 +18,10 @@ class KonfigurasiPembayaranTahunAjaran(models.Model):
     def name_get(self):
         result = []
         for record in self:
-            label = record.KonfigurasiPembayaranTahunAjaran_fiscal_year or 'No Fiscal Year'
+            label = record.fiscal_year or 'No Fiscal Year'
             result.append((record.id, label))
         return result
+
 
 class KonfigurasiPembayaranPeriods(models.Model):
     _name = "konfigurasi.pembayaran.periods"

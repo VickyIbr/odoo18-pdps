@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <!-- Rombel List View -->
+        <record id="view_rombel_list" model="ir.ui.view">
+            <field name="name">school_config.rombel.list</field>
+            <field name="model">school_config.rombel</field>
+            <field name="arch" type="xml">
+                <list string="Rombel">
+                    <field name="name"/>
+                    <field name="lembaga_id"/>
+                    <field name="grade"/>
+                    <field name="jenis"/>
+                    <field name="walas_id"/>
+                    <field name="thn_ajaran_id"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Rombel Form View -->
+        <record id="view_rombel_form" model="ir.ui.view">
+            <field name="name">school_config.rombel.form</field>
+            <field name="model">school_config.rombel</field>
+            <field name="arch" type="xml">
+                <form string="Rombel">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="lembaga_id"/>
+                            <field name="grade"/>
+                            <field name="jenis"/>
+                            <field name="walas_id"/>
+                            <field name="thn_ajaran_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Rombel Action -->
+        <record id="action_rombel" model="ir.actions.act_window">
+            <field name="name">Rombel</field>
+            <field name="res_model">school_config.rombel</field>
+            <field name="view_mode">list,form</field>
+        </record>
+    </odoo>

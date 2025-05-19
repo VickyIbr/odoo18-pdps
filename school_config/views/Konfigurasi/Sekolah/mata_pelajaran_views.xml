@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Mata Pelajaran List View -->
+    <record id="view_mata_pelajaran_list" model="ir.ui.view">
+        <field name="name">school_config.mata.pelajaran.list</field>
+        <field name="model">school_config.mata.pelajaran</field>
+        <field name="arch" type="xml">
+            <list string="Mata Pelajaran">
+                <field name="no_urut"/>
+                <field name="name"/>
+                <field name="lembaga"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Mata Pelajaran Form View -->
+    <record id="view_mata_pelajaran_form" model="ir.ui.view">
+        <field name="name">school_config.mata.pelajaran.form</field>
+        <field name="model">school_config.mata.pelajaran</field>
+        <field name="arch" type="xml">
+            <form string="Mata Pelajaran">
+                <sheet>
+                    <group>
+                        <field name="no_urut"/>
+                        <field name="name"/>
+                        <field name="lembaga"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Mata Pelajaran Action -->
+    <record id="action_mata_pelajaran" model="ir.actions.act_window">
+        <field name="name">Mata Pelajaran</field>
+        <field name="res_model">school_config.mata.pelajaran</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

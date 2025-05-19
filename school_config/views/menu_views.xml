@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_sekolah_root" 
+              name="Sekolah" 
+              sequence="10"/>
+
+    <!-- Master Data Menu -->
+    <menuitem id="menu_sekolah_master_data" 
+              name="Master Data" 
+              parent="menu_sekolah_root" 
+              sequence="50"/>
+
+    <!-- Master Siswa Sub-menu -->
+
+    <menuitem id="menu_master_siswa" 
+              name="Siswa" 
+              parent="menu_sekolah_master_data" 
+              action="action_master_siswa" 
+              sequence="10"/>
+
+    <!-- Master Guru Sub-menu -->
+    <menuitem id="menu_master_guru" 
+              name="Guru" 
+              parent="menu_sekolah_master_data" 
+              action="action_master_guru" 
+              sequence="20"/>
+
+    <!-- Konfigurasi Menu -->
+
+    <menuitem id="menu_sekolah_konfigurasi" 
+              name="Konfigurasi" 
+              parent="menu_sekolah_root" 
+              sequence="100"/>
+
+
+    <!-- Separator -->
+    <menuitem id="separator_sekolah" 
+              name="Sekolah" 
+              parent="menu_sekolah_konfigurasi" 
+              sequence="100"/>
+
+    <menuitem id="separator_tahfidz" 
+              name="Tahfidz" 
+              parent="menu_sekolah_konfigurasi" 
+              sequence="100"/>
+
+    <menuitem id="separator_pembayaran" 
+              name="Pebayaran" 
+              parent="menu_sekolah_konfigurasi" 
+              sequence="100"/>
+
+    <!-- Laporan Ke Yayasan Sub-menu -->
+    <menuitem id="menu_laporan_yayasan" 
+              name="Laporan Ke Yayasan" 
+              parent="separator_sekolah" 
+              action="action_laporan_yayasan" 
+              sequence="10"/>
+
+    <!-- Laporan Bulanan Sub-menu -->
+    <menuitem id="menu_laporan_bulanan" 
+              name="Laporan Bulanan" 
+              parent="separator_sekolah" 
+              action="action_laporan_bulanan" 
+              sequence="20"/>
+
+    <!-- Rombel Sub-menu -->
+    <menuitem id="menu_rombel" 
+              name="Rombel" 
+              parent="separator_sekolah" 
+              action="action_rombel" 
+              sequence="30"/>
+
+    <!-- Mata Pelajaran Sub-menu -->
+    <menuitem id="menu_mata_pelajaran" 
+              name="Mata Pelajaran" 
+              parent="separator_sekolah" 
+              action="action_mata_pelajaran" 
+              sequence="40"/>
+
+    <!-- Penugasan Guru Sub-menu -->
+    <menuitem id="menu_penugasan_guru" 
+              name="Penugasan Guru"
+              parent="separator_tahfidz" 
+              action="action_penugasan_guru" 
+              sequence="40"/>
+
+    <!-- Daftar Surat Sub-menu -->
+    <menuitem id="menu_daftar_surat"
+              name="Daftar Surat" 
+              parent="separator_tahfidz" 
+              action="action_daftar_surat" 
+              sequence="40"/>
+    
+    <!-- Tahun Ajaran Sub-menu -->
+    <menuitem id="nav_konfigurasi_pembayaran_tahunajaran"
+              name="Tahun Ajaran" 
+              parent="separator_pembayaran" 
+              action="konfigurasi_pembayaran_tahunajaran" 
+              sequence="40"/>
+</odoo>

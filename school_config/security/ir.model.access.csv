@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_school_config_laporan_yayasan,school_config.laporan.yayasan,model_school_config_laporan_yayasan,base.group_user,1,1,1,1
+access_school_config_laporan_bulanan,school_config.laporan.bulanan,model_school_config_laporan_bulanan,base.group_user,1,1,1,1
+access_school_config_rombel,school_config.rombel,model_school_config_rombel,base.group_user,1,1,1,1
+access_school_config_mata_pelajaran,school_config.mata.pelajaran,model_school_config_mata_pelajaran,base.group_user,1,1,1,1
+access_school_config_penugasan_guru,school_config.penugasan.guru,model_school_config_penugasan_guru,base.group_user,1,1,1,1
+access_school_config_daftar_surat,school_config.daftar.surat,model_school_config_daftar_surat,base.group_user,1,1,1,1
+access_school_config_master_siswa,school_config.master.siswa,model_school_config_master_siswa,base.group_user,1,1,1,1
+access_school_config_master_guru,school_config.master.guru,model_school_config_master_guru,base.group_user,1,1,1,1
+access_konfigurasi_pembayaran_tahunajaran,konfigurasi.pembayaran.tahunajaran,model_konfigurasi_pembayaran_tahunajaran,base.group_user,1,1,1,1

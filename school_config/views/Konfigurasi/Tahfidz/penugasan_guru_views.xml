@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- Penugasan Guru List View -->
+        <record id="view_penugasan_guru_list" model="ir.ui.view">
+            <field name="name">school_config.penugasan.guru.list</field>
+            <field name="model">school_config.penugasan.guru</field>
+            <field name="arch" type="xml">
+                <list string="Penugasan Guru">
+                <field name="nomor_dokumen"/>
+                <field name="lembaga"/>
+                <field name="tahun_ajaran"/>
+                <field name="rombel"/>
+                <field name="grade"/>
+                <field name="guru"/>
+                <field name="bidang_guru"/>
+                <field name="wali_kelas_validator"/>
+                <field name="penguji_validator"/>
+                <field name="halaqah_qount"/>
+                <field name="status"/>
+        </list>
+            </field>
+        </record>
+
+        <!-- Rombel Form View -->
+        <record id="view_penugasan_guru_form" model="ir.ui.view">
+            <field name="name">school_config.penugasan.guru.form</field>
+            <field name="model">school_config.penugasan.guru</field>
+            <field name="arch" type="xml">
+                <form string="Penugasan Guru">
+                    <sheet>
+                        <group>
+                            <field name="nomor_dokumen"/>
+                            <field name="lembaga"/>
+                            <field name="tahun_ajaran"/>
+                            <field name="rombel"/>
+                            <field name="grade"/>
+                            <field name="guru"/>
+                            <field name="bidang_guru"/>
+                            <field name="wali_kelas_validator"/>
+                            <field name="penguji_validator"/>
+                            <field name="halaqah_qount"/>
+                            <field name="status"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Rombel Action -->
+        <record id="action_penugasan_guru" model="ir.actions.act_window">
+            <field name="name">Penugasan Guru</field>
+            <field name="res_model">school_config.penugasan.guru</field>
+            <field name="view_mode">list,form</field>
+        </record>
+    </odoo>
